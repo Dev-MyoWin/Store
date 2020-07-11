@@ -6,11 +6,11 @@ if(isset($_SESSION['auth']))
 include('connection.php');
 $id=$_GET['id'];
 
-$editor_name_result=mysqli_query($conn,"SELECT * FROM user WHERE id=$id");
+$editor_name_result=mysqli_query($conn,"SELECT * FROM `users` WHERE id=$id");
 $editor_name_row=mysqli_fetch_assoc($editor_name_result);
 $editor_name=$editor_name_row['user_name'];
 
-$sql="DELETE FROM user  WHERE id=$id";
+$sql="DELETE FROM `users`  WHERE id=$id";
 mysqli_query($conn,$sql);
 
 

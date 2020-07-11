@@ -1,18 +1,18 @@
 <?php
-
+ob_start();
 session_start();
 $_SESSION['page_index']='list';
 if(isset($_SESSION['auth']) && ($_SESSION['role']=="admin"))
 {
     include('connection.php');
     
-    $trash_sql="SELECT COUNT(id) as count FROM user WHERE soft_delete='true'";
+    $trash_sql="SELECT COUNT(id) as count FROM `users` WHERE soft_delete='true'";
     $trash_result=mysqli_query($conn,$trash_sql);
     $trash_row=mysqli_fetch_assoc($trash_result);
 
 ?>
     <html>
-    <head>
+    <head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>
     Editor Table
     </title>
@@ -48,7 +48,7 @@ if(isset($_SESSION['auth']) && ($_SESSION['role']=="admin"))
     <?php
     
     
-    $sql="SELECT * FROM user   WHERE soft_delete='false'";
+    $sql="SELECT * FROM `users`   WHERE soft_delete='false'";
     
     $result=mysqli_query($conn,$sql);
     $a=1;
@@ -71,8 +71,7 @@ if(isset($_SESSION['auth']) && ($_SESSION['role']=="admin"))
              if($row['role']=='admin')
              {
             ?>
-             <td><a href="edit_editor.php?id=<?php echo $row['id']?>"class="btn btn-info btn-block">Edit &nbsp; <i class="fa fa-pencil"></i></a></td>
-                   
+              <td></td>            
             <?php
              }
              else

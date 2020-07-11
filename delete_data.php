@@ -6,7 +6,7 @@ if(isset($_SESSION['auth']))
 include('connection.php');
 $sql="DELETE FROM products ";
 $sql1="DELETE FROM categories ";
-$sql2="DELETE FROM user WHERE `role`!='admin'";
+$sql2="DELETE FROM `users` WHERE `role`!='admin'";
 $sql3="DELETE FROM log";
 $sql4="DELETE FROM notifications";
 mysqli_query($conn,$sql);

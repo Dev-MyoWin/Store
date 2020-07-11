@@ -3,7 +3,7 @@
 $dbhost="localhost";
 $dbuser="root";
 $dbpass="";
-$dbname="store";
+$dbname="store1";
 $conn=mysqli_connect($dbhost,$dbuser,$dbpass);
 mysqli_select_db($conn,$dbname);
 ?>

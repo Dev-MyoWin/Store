@@ -5,7 +5,7 @@ if(isset($_SESSION['auth']))
 
 include('connection.php');
 $id=$_GET['id'];
-$sql="SELECT * FROM user  WHERE id=$id";  
+$sql="SELECT * FROM `users`  WHERE id=$id";  
 $result=mysqli_query($conn,$sql);
 $role=mysqli_fetch_assoc($result);
 $name=$role['name'];
@@ -17,7 +17,7 @@ $a=$role['role'];
 if($a=='editor'){
    
 
-    $chage_admin_sql = "UPDATE user SET role='editor' WHERE role='admin'";
+    $chage_admin_sql = "UPDATE `users` SET role='editor' WHERE role='admin'";
     mysqli_query($conn,$chage_admin_sql);
 
  
@@ -30,7 +30,7 @@ if($a=='editor'){
        
 
     
-    $sql="UPDATE user SET name='$name',user_name='$user_name',email='$email',role='admin',password='$password' WHERE id=$id";
+    $sql="UPDATE `users` SET name='$name',user_name='$user_name',email='$email',role='admin',password='$password' WHERE id=$id";
     mysqli_query($conn,$sql);
     
     $user_name = $_SESSION['user_name'];
@@ -45,7 +45,7 @@ if($a=='editor'){
     }
     else
     {
-        $sql="UPDATE user SET name='$name',user_name='$user_name',email='$email',role='editor',password='$password' WHERE id=$id";
+        $sql="UPDATE `users` SET name='$name',user_name='$user_name',email='$email',role='editor',password='$password' WHERE id=$id";
         mysqli_query($conn,$sql);
     
     }

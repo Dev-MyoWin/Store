@@ -3,7 +3,7 @@ session_start();
 include('../connection.php');
 $name=$_POST['user_name'];
 $password=$_POST['password'];
-$sql="SELECT * FROM user WHERE `user_name`='$name' AND `password`='$password'  ";
+$sql="SELECT * FROM `users` WHERE `user_name`='$name' AND `password`='$password'  ";
 $result=mysqli_query($conn,$sql);
 $row= mysqli_fetch_assoc($result);
 
@@ -22,6 +22,6 @@ if($row)
 }
 else
 {
-    header("location:login.php");
+   echo"error";
 }
 ?>

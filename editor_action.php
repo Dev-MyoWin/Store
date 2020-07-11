@@ -8,7 +8,7 @@ $confirm=$_POST['confirm'];
 if($password==$confirm)
 {
 
-$sql="INSERT INTO `user` (`name`,`user_name`,`email`,`password`,`role`,`soft_delete`) VALUES ('$name','$user_name','$email','$password','editor','false')";
+$sql="INSERT INTO `users` (`name`,`user_name`,`email`,`password`,`role`,`soft_delete`) VALUES ('$name','$user_name','$email','$password','editor','false')";
 mysqli_query($conn,$sql);
 date_default_timezone_set('Asia/Yangon');
     $time=date('d-m-Y h:i:s A');

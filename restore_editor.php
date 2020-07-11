@@ -5,7 +5,7 @@ if(isset($_SESSION['auth'])&& ($_SESSION['role'])=='admin')
 
 include('connection.php');
 $id=$_GET['id'];
-$sql="UPDATE  user SET `soft_delete`='false' WHERE id=$id";
+$sql="UPDATE  `users` SET `soft_delete`='false' WHERE id=$id";
 mysqli_query($conn,$sql);
 
  header("location:editor_trash.php");

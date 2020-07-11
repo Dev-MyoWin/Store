@@ -22,7 +22,7 @@ if(isset($_SESSION['auth']))
         <div class="container">
     <?php  
     include('connection.php');
-    $count_sql="SELECT COUNT(id) AS count FROM user WHERE soft_delete='true'";
+    $count_sql="SELECT COUNT(id) AS count FROM `users` WHERE soft_delete='true'";
 
    $count_result=mysqli_query($conn,$count_sql);
    $role_count=mysqli_fetch_assoc($count_result);
@@ -50,7 +50,7 @@ if(isset($_SESSION['auth']))
     <?php
     
     
-    $sql="SELECT * FROM user WHERE soft_delete='true'";
+    $sql="SELECT * FROM `users` WHERE soft_delete='true'";
     
     $result=mysqli_query($conn,$sql);
     $b=1;
