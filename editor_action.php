@@ -1,4 +1,5 @@
 <?php
+ob_start();
 include('connection.php');
 $name=$_POST['name'];
 $user_name=$_POST['username'];

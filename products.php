@@ -1,4 +1,5 @@
 <?php
+ob_start();
 session_start();
 $_SESSION['page_index']='products';
 if(isset($_SESSION['auth']))
